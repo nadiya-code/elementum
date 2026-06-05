@@ -106,49 +106,49 @@ function HomePage() {
           </section>
           
           {/* FEATURES SECTION BLOCK A */}
-          <section id="studio" className="section-padding overflow-hidden">
-            <div className="container-elementum">
-              <motion.div 
-                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-                className="grid lg:grid-cols-2 gap-16 items-center"
-              >
-                <div className="order-2 lg:order-1">
-                  <h2 className=" w-[724px] h-[141px] top-[129px] mb-6 font-bold text-3xl md:text-5xl leading-tight">
-                    <span className="relative inline-block pb-3">
-                      Tomorrow
-                      <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
-                    </span>{' '}
-                    should be better than today
-                  </h2>
-                  <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                    We partner with ambitious organizations to create meaningful change. Our approach combines strategic thinking with creative execution to deliver results that matter.
-                  </p>
-                  <a href="#services" className="inline-flex items-center text-lg font-bold hover:text-[hsl(var(--elementum-purple))] transition-colors group">
-                    Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                  </a>
-                </div>
-                
-                <div className="order-1 lg:order-2 relative mx-auto w-full max-w-md lg:max-w-none">
-                  <CircleGlow size={400} className="-top-10 -left-10" />
-                  <TriangleAccent size={200} className="absolute -bottom-16 -right-10 z-0 rotate-12" />
-                  
-                  <div className="relative z-10 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                    <img 
-                      src="img18.jpeg" 
-                      alt="Two men in business meeting"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </section>
+          {/* FEATURES SECTION BLOCK A */}
+<section id="studio" className="section-padding overflow-hidden">
+  <div className="container-elementum">
+    <motion.div 
+      initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+      className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+    >
+      {/* TEXT — stacks below image on mobile */}
+      <div className="order-2 lg:order-1">
+        {/* ✅ Removed fixed w-[724px] h-[141px] top-[129px] — breaks mobile */}
+        <h2 className="mb-6 font-bold text-2xl sm:text-3xl md:text-5xl leading-tight">
+          <span className="relative inline-block pb-3">
+            Tomorrow
+            <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
+          </span>{' '}
+          should be better than today
+        </h2>
+        <p className="text-base sm:text-xl text-muted-foreground mb-8 leading-relaxed">
+          We partner with ambitious organizations to create meaningful change. Our approach 
+          combines strategic thinking with creative execution to deliver results that matter.
+        </p>
+        <a href="#services" className="inline-flex items-center text-base sm:text-lg font-bold hover:text-[hsl(var(--elementum-purple))] transition-colors group">
+          Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+        </a>
+      </div>
 
-          {/* CONNECTING WAVY LINE */}
-          <div className="container-elementum flex justify-center py-4 hidden lg:flex">
-             
-          </div>
+      {/* IMAGE — shows first on mobile */}
+      <div className="order-1 lg:order-2 relative mx-auto w-full max-w-[280px] sm:max-w-sm lg:max-w-none">
+        <CircleGlow size={400} className="-top-10 -left-10" />
+        <TriangleAccent size={200} className="absolute -bottom-16 -right-10 z-0 rotate-12" />
+        
+        <div className="relative z-10 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
+          <img 
+            src="img18.jpeg" 
+            alt="Two men in business meeting"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
 
+    </motion.div>
+  </div>
+</section>
           {/* FEATURES SECTION BLOCK B */}
           <section className="section-padding overflow-hidden">
             <div className="container-elementum">
