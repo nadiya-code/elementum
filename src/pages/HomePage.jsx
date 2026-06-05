@@ -30,13 +30,43 @@ function HomePage() {
         <main className="flex-1">
           {/* HERO SECTION */}
           <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
-            <WavyLine vertical className="absolute left-4 top-1/4 hidden lg:block opacity-60" />
-            
+  <img
+    src="img30.jpeg"
+    alt=""
+    aria-hidden="true"
+    style={{
+      position: 'absolute',
+      width: '60px',
+      height: '200px',
+      top: '600.5px',
+      left: '-8.5px',
+      transformOrigin: 'center center',
+      pointerEvents: 'none',
+      zIndex: 0,
+    }}
+  />
+  <img
+    src="img31.jpeg"
+    alt=""
+    aria-hidden="true"
+    style={{
+      position: 'absolute',
+      width: '100px',
+      height: '200px',
+      top: '602.5px',
+      left: '53.5px',
+      transformOrigin: 'center center',
+      pointerEvents: 'none',
+      zIndex: 0.5,
+      opacity:100,
+    }}
+  />
+
+
             <div className="container-elementum">
               <motion.div 
                 initial="hidden" animate="visible" variants={fadeInUp}
-                className="text-center max-w-5xl mx-auto flex flex-col items-center"
-              >
+                className="text-center max-w-5xl mx-auto flex flex-col items-center">
                 {/* --- FIGMA 'HEAD' BOUNDING LAYER CONTAINER (1332px x 477px) --- */}
                 <div className="relative flex flex-col items-center justify-center w-full max-w-[1332px] min-h-[477px] mx-auto">
                   
@@ -94,7 +124,7 @@ function HomePage() {
                     We partner with ambitious organizations to create meaningful change. Our approach combines strategic thinking with creative execution to deliver results that matter.
                   </p>
                   <a href="#services" className="inline-flex items-center text-lg font-bold hover:text-[hsl(var(--elementum-purple))] transition-colors group">
-                    Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">──→</span>
+                    Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                   </a>
                 </div>
                 
@@ -116,7 +146,7 @@ function HomePage() {
 
           {/* CONNECTING WAVY LINE */}
           <div className="container-elementum flex justify-center py-4 hidden lg:flex">
-             <WavyLine className="rotate-[15deg] opacity-60" />
+             
           </div>
 
           {/* FEATURES SECTION BLOCK B */}
@@ -178,7 +208,6 @@ function HomePage() {
                   you!
                 </motion.h2>
                 <div className="absolute -top-12 right-0 md:right-10 opacity-60 hidden md:block">
-                  <WavyLine />
                 </div>
               </div>
 
@@ -223,7 +252,6 @@ function HomePage() {
   <div className="w-full flex justify-center overflow-visible px-6">
     <div className="relative w-full max-w-3xl overflow-visible">
       <FloatingAvatars />
-
       <motion.div
         initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
         className="relative z-10 bg-white rounded-3xl p-10 md:p-16 shadow-xl"
@@ -241,10 +269,8 @@ function HomePage() {
   {/* Wavy line back inside container */}
   <div className="container-elementum flex justify-center">
     <div className="mt-20 opacity-60">
-      <WavyLine />
     </div>
   </div>
-
 </section>
         </main>
         <Newsletter />

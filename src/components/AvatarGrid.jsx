@@ -10,7 +10,7 @@ function AvatarGrid() {
     { id: 5, url: 'img23.jpeg', topClass: 'xl:top-[55px]',  leftClass: 'xl:left-[977px]' },
     { id: 6, url: 'img7.jpeg',  topClass: 'xl:top-[139px]', leftClass: 'xl:left-[1144px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
   { id: 7, url: 'img24.jpeg',  topClass: 'xl:top-[0px]', leftClass: 'xl:left-[1414px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
-  { id: 8, url: 'img9.jpeg',  topClass: 'xl:top-[159px]', leftClass: 'xl:left-[1656px]', isSpecialBorder: true },
+  { id: 7, url: 'img9.jpeg',  topClass: 'xl:top-[159px]', leftClass: 'xl:left-[1580px]', isSpecialBorder: true },
   ];
 
   return (
@@ -20,7 +20,7 @@ function AvatarGrid() {
       {/* DESKTOP ABSTRACT VIEWPORT SCREEN PATHWAYS */}
       <div 
         className="relative shrink-0 hidden xl:block"
-        style={{ width: '1900px', height: '453px' }}
+        style={{ width: '1844px', height: '453px' }}
       >
         {avatars.map((avatar, index) => (
           <div 
@@ -43,44 +43,24 @@ function AvatarGrid() {
       </div>
 
       {/* MOBILE BREAKPOINT LOGIC - Displays a clean fluid row layout so it doesn't break overflow boundaries */}
-     {/* MOBILE - SAME DESIGN SCALED */}
-<div className="xl:hidden w-full overflow-x-auto">
-  <div className="flex justify-center">
-    <div
-      className="relative origin-top-left scale-[0.22] sm:scale-[0.35] md:scale-[0.55]"
-      style={{
-        width: '1844px',
-        height: '453px',
-      }}
-    >
-      {avatars.map((avatar, index) => (
-        <div
-          key={`${avatar.id}-${index}`}
-          className={`absolute
-            ${avatar.topClass.replace('xl:', '')}
-            ${avatar.leftClass.replace('xl:', '')}
-            w-[226px] h-[226px]
-            rounded-full overflow-hidden shadow-lg bg-neutral-100
-            ${
-              avatar.isSpecialBorder
-                ? 'border-[8px] border-white shadow-xl'
-                : 'border-4 border-white'
+      <div className="flex flex-wrap items-center justify-center gap-4 px-4 xl:hidden">
+        {avatars.map((avatar, index) => (
+          <div 
+            key={avatar.id}
+            className={`w-28 h-28 rounded-full overflow-hidden bg-neutral-100 shadow-md ${
+              avatar.isSpecialBorder ? 'border-4 border-white' : 'border-2 border-white'
             }`}
-          style={{ zIndex: 10 - index }}
-        >
-          <img
-            src={avatar.url}
-            alt={`Team member ${index + 1}`}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+          >
+            <img 
+              src={avatar.url} 
+              alt="Team thumbnail mini"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
-
 export default AvatarGrid;
