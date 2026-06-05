@@ -137,7 +137,7 @@ function HomePage() {
         <CircleGlow size={400} className="-top-10 -left-10" />
         <TriangleAccent size={200} className="absolute -bottom-16 -right-10 z-0 rotate-12" />
         
-        <div className="relative z-10 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
+        <div className="relative z-0 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
           <img 
             src="img18.jpeg" 
             alt="Two men in business meeting"
