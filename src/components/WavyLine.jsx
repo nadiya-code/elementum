@@ -32,5 +32,4 @@ function WavyLine({ className = '', vertical = false }) {
     </div>
   );
 }
-
 export default WavyLine;

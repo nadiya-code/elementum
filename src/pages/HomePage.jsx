@@ -44,13 +44,10 @@ function HomePage() {
                   <h1 className="mb-8 font-extrabold tracking-tight text-4xl sm:text-6xl md:text-7xl leading-[1.3] relative z-10 w-full max-w-[1305px]">
                     The{' '}
                     {/* Golden Underline Accent Layer matching exact 6px #FFC250 Border token natively */}
-                    <span className="relative inline-block">
-                      thinkers
-                      <span 
-                        style={{ borderBottom: '6px solid #FFC250' }} 
-                        className="absolute bottom-1 left-0 w-full h-[12px] pointer-events-none z-0"
-                      />
-                    </span>{' '}
+                    <span className="relative inline-block pb-3">
+                      thinkers
+                      <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
+                    </span>{' '}
                     and doers were{' '}ch
                     <span 
                       style={{ backgroundColor: '#FFC2EA', borderRadius: '100px' }} 
@@ -88,10 +85,10 @@ function HomePage() {
               >
                 <div className="order-2 lg:order-1">
                   <h2 className=" w-[724px] h-[141px] top-[129px] mb-6 font-bold text-3xl md:text-5xl leading-tight">
-                    <span className="relative inline-block">
-                      Tomorrow
-                      <span style={{ borderBottom: '3px solid #FFC250' }} className="absolute bottom-1 left-0 w-[260px] h-[6px] pointer-events-none" />
-                    </span>{' '}
+                    <span className="relative inline-block pb-3">
+                      Tomorrow
+                      <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
+                    </span>{' '}
                     should be better than today
                   </h2>
                   <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -146,16 +143,16 @@ function HomePage() {
                 <div>
                   <h2 className="mb-6 font-bold text-3xl md:text-5xl leading-tight relative">
                     See how we can help you{' '}
-                    <span className="relative inline-block">
-                      progress
-                      <span style={{ borderBottom: '3px solid #FFC250' }} className="absolute bottom-1 left-0 w-[260px] h-[6px] pointer-events-none" />
-                    </span>
+                    <span className="relative inline-block pb-3">
+                      Progress
+                      <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
+                    </span>
                   </h2>
                   <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                     From brand strategy to digital experiences, we bring together diverse expertise to solve complex challenges and create lasting impact through fearless insights.
                   </p>
                   <a href="#services" className="inline-flex items-center text-lg font-bold hover:text-[hsl(var(--elementum-purple))] transition-colors group">
-                    Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">──→</span>
+                    Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                   </a>
                 </div>
               </motion.div>
@@ -168,19 +165,17 @@ function HomePage() {
               <div className="relative mb-16 max-w-5xl mx-auto">
                 <motion.h2 
                   initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                  className="text-left font-bold text-3xl md:text-5xl relative"
-                >
+                  className="text-left font-bold text-3xl md:text-5xl relative">
                   What we{' '}
                   <span 
                     style={{ backgroundColor: '#D7EEDD', borderRadius: '100px' }} 
-                    className="mx-1 inline-block align-middle pt-4 pb-4 pl-2 pr-2 leading-none"
-                  >
+                    className="mx-1 inline-block align-middle pt-4 pb-4 pl-2 pr-2 leading-none">
                     can
                   </span>{' '}
-                  <span className="relative inline-block">
-                    offer
-                    <span style={{ borderBottom: '3px solid #FFC250' }} className="absolute bottom-[-10px] left-0 w-[371px] h-[6px] pointer-events-none" />
-                  </span>{' '}
+                  <span className="relative inline-block pb-3">
+                      offer
+                      <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
+                    </span>{' '}
                   you!
                 </motion.h2>
                 <div className="absolute -top-12 right-0 md:right-10 opacity-60 hidden md:block">
@@ -218,10 +213,10 @@ function HomePage() {
       initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
       className="text-center mb-24 max-w-4xl font-bold text-3xl md:text-5xl relative">
       What our customer says{' '}
-      <span className="relative inline-block">
-        About Us
-        <span style={{ borderBottom: '3px solid #FFC250' }} className="absolute bottom-[-10px] left-[-100px] w-[371px] h-[6px] pointer-events-none" />
-      </span>
+      <span className="relative inline-block pb-3">
+                      About Us
+                      <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
+                    </span>{' '}
     </motion.h2>
   </div>
 
