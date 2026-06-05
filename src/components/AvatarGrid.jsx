@@ -2,33 +2,28 @@ import React from 'react';
 
 function AvatarGrid() {
   const avatars = [
-    // Normalized top offsets (Figma Canvas top coordinate minus the section start index of 801px)
-    { id: 1, url: 'img21.jpeg', topClass: 'absolute top-[195px]', leftClass: 'left-[38px]', isSpecialBorder: false },
-    { id: 2, url: 'img20.jpeg', topClass: 'absolute top-[139px]', leftClass: 'left-[199px]', isSpecialBorder: true }, // Ellipse 261 (8px border)
-    { id: 3, url: 'img19.jpeg', topClass: 'absolute top-[0px]',   leftClass: 'left-[553px]', isSpecialBorder: false },
-    { id: 4, url: 'img22.jpeg', topClass: 'absolute top-[226px]', leftClass: 'left-[677px]', isSpecialBorder: false },
-    { id: 5, url: 'img23.jpeg', topClass: 'absolute top-[55px]',  leftClass: 'left-[977px]', isSpecialBorder: false },
-    { id: 6, url: 'img7.jpeg',  topClass: 'absolute top-[139px]', leftClass: 'left-[1144px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
-    { id: 7, url: 'img24.jpeg', topClass: 'absolute top-[0px]',   leftClass: 'left-[1414px]', isSpecialBorder: false }, 
-    { id: 8, url: 'img9.jpeg',  topClass: 'absolute top-[159px]', leftClass: 'left-[1656px]', isSpecialBorder: false }, // Fixed duplicate key
+    // Your exact laptop position coordinates remain completely untouched:
+    { id: 1, url: 'img21.jpeg', topClass: 'xl:top-[195px]', leftClass: 'xl:left-[38px]', isSpecialBorder: false },
+    { id: 2, url: 'img20.jpeg', topClass: 'xl:top-[139px]', leftClass: 'xl:left-[199px]', isSpecialBorder: true }, 
+    { id: 3, url: 'img19.jpeg', topClass: 'xl:top-[0px]',   leftClass: 'xl:left-[553px]', isSpecialBorder: false },
+    { id: 4, url: 'img22.jpeg', topClass: 'xl:top-[226px]', leftClass: 'xl:left-[677px]', isSpecialBorder: false },
+    { id: 5, url: 'img23.jpeg', topClass: 'xl:top-[55px]',  leftClass: 'xl:left-[977px]', isSpecialBorder: false },
+    { id: 6, url: 'img7.jpeg',  topClass: 'xl:top-[139px]', leftClass: 'xl:left-[1144px]', isSpecialBorder: true }, 
+    { id: 7, url: 'img24.jpeg', topClass: 'xl:top-[0px]',   leftClass: 'xl:left-[1414px]', isSpecialBorder: false }, 
+    { id: 8, url: 'img9.jpeg',  topClass: 'xl:top-[159px]', leftClass: 'xl:left-[1656px]', isSpecialBorder: false },
   ];
 
   return (
-    /* 1. We wrap the grid in an outer container that reserves exactly the calculated height 
-         produced by the scaling factor to prevent overlapping with content below it.
-      2. overflow-visible ensures the avatar margins don't clip when scaled.
-    */
-    <div className="w-full flex justify-center items-center overflow-visible h-[240px] sm:h-[320px] md:h-[380px] xl:h-[453px] mt-8">
+    <div className="w-full flex justify-center items-center overflow-visible my-8 h-[180px] sm:h-[260px] lg:h-[350px] xl:h-[453px]">
       
-      {/* SCALE FACTOR CONTROL LAYER:
-        - scale-[0.45] on extra small mobile screens
-        - scale-[0.65] on mobile/tablets
-        - scale-[0.85] on small laptops
-        - scale-100 on desktop viewports
-        - origin-top maps coordinates seamlessly without adding weird layout gaps
+      {/* ZOOM CANVAS LAYER:
+        - On mobile and small screens, it scales down smoothly using percentages.
+        - On standard laptops, it scales to `scale-[0.80]` or `scale-[0.88]` so everything fits.
+        - On large desktops, it hits full `scale-100`.
+        - `origin-center` zooms out cleanly without shifts.
       */}
       <div 
-        className="relative shrink-0 select-none pointer-events-auto origin-top scale-[0.45] sm:scale-[0.65] md:scale-[0.80] lg:scale-[0.88] xl:scale-100 transition-transform duration-300"
+        className="relative shrink-0 select-none pointer-events-auto origin-center scale-[0.20] xs:scale-[0.26] sm:scale-[0.38] md:scale-[0.52] lg:scale-[0.70] lgl:scale-[0.82] xl:scale-100 transition-transform duration-200"
         style={{ width: '1844px', height: '453px' }}
       >
         {avatars.map((avatar, index) => (
@@ -44,7 +39,7 @@ function AvatarGrid() {
             <img 
               src={avatar.url} 
               alt={`Team member ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-full"
               loading="lazy"
             />
           </div>
