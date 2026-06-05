@@ -116,10 +116,10 @@ function HomePage() {
       {/* TEXT — stacks below image on mobile */}
       <div className="order-2 lg:order-1">
         {/* ✅ Removed fixed w-[724px] h-[141px] top-[129px] — breaks mobile */}
-        <h2 className="mb-6 font-bold text-2xl sm:text-3xl md:text-5xl leading-tight ">
+        <h2 className="mb-6 font-bold text-2xl sm:text-3xl md:text-5xl leading-tight z-10">
           <span className="relative inline-block pb-3">
             Tomorrow
-            <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-1" />
+            <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
           </span>{' '}
           should be better than today
         </h2>
