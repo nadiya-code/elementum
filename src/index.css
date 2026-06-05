@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Elementum Exact Color Palette */
+    --elementum-pink: 326 78% 88%; /* #fbcfe8 */
+    --elementum-mint: 150 77% 89%; /* #d1fae5 */
+    --elementum-mint-light: 163 46% 93%; /* #e6f4f0 */
+    --elementum-purple: 258 90% 66%; /* #8b5cf6 */
+    --elementum-coral: 5 100% 72%; /* #ff7a70 */
+    --elementum-golden: 43 96% 56%; /* #fbbf24 */
+    --elementum-black: 0 0% 4%; /* #0a0a0a */
+    --elementum-white: 0 0% 100%; /* #ffffff */
+    
+    /* Base UI Tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 258 90% 66%;
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl leading-[1.1];
+  }
+  
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Shared layout/component utilities */
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  .container-elementum {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10;
+  }
+
+  .btn-pill {
+    @apply rounded-full px-8 py-4 font-semibold text-lg transition-all duration-300 active:scale-95;
+  }
+  
+  .btn-pill-black {
+    @apply bg-[hsl(var(--elementum-black))] text-white hover:bg-[hsl(var(--elementum-black))/90];
+  }
+
+  /* Newsletter & Footer specific utilities */
+  .bg-mint-light {
+    @apply bg-[hsl(var(--elementum-mint-light))];
+  }
+
+  .footer-link {
+    @apply text-gray-600 hover:text-[hsl(var(--elementum-purple))] transition-colors duration-200 text-base;
+  }
+  
+  .footer-heading {
+    @apply text-lg font-bold text-foreground mb-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
