@@ -3,29 +3,31 @@ import React from 'react';
 function AvatarGrid() {
   const avatars = [
     // Normalized top offsets (Figma Canvas top coordinate minus the section start index of 801px)
-    { id: 1, url: 'img21.jpeg', topClass: 'xl:top-[195px]', leftClass: 'xl:left-[38px]' },
-    { id: 2, url: 'img20.jpeg', topClass: 'xl:top-[139px]', leftClass: 'xl:left-[199px]', isSpecialBorder: true }, // Ellipse 261 (8px border)
-    { id: 3, url: 'img19.jpeg', topClass: 'xl:top-[0px]',   leftClass: 'xl:left-[553px]' },
-    { id: 4, url: 'img22.jpeg', topClass: 'xl:top-[226px]', leftClass: 'xl:left-[677px]' },
-    { id: 5, url: 'img23.jpeg', topClass: 'xl:top-[55px]',  leftClass: 'xl:left-[977px]' },
-    { id: 6, url: 'img7.jpeg',  topClass: 'xl:top-[139px]', leftClass: 'xl:left-[1144px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
-  { id: 7, url: 'img24.jpeg',  topClass: 'xl:top-[0px]', leftClass: 'xl:left-[1414px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
-  { id: 7, url: 'img9.jpeg',  topClass: 'xl:top-[159px]', leftClass: 'xl:left-[1656px]', isSpecialBorder: true },
+    { id: 1, url: 'img21.jpeg', topClass: 'top-[195px]', leftClass: 'left-[38px]', isSpecialBorder: false },
+    { id: 2, url: 'img20.jpeg', topClass: 'top-[139px]', leftClass: 'left-[199px]', isSpecialBorder: true },  // Ellipse 261 (8px border)
+    { id: 3, url: 'img19.jpeg', topClass: 'top-[0px]',   leftClass: 'left-[553px]', isSpecialBorder: false },
+    { id: 4, url: 'img22.jpeg', topClass: 'top-[226px]', leftClass: 'left-[677px]', isSpecialBorder: false },
+    { id: 5, url: 'img23.jpeg', topClass: 'top-[55px]',  leftClass: 'left-[977px]', isSpecialBorder: false },
+    { id: 6, url: 'img7.jpeg',  topClass: 'top-[139px]', leftClass: 'left-[1144px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
+    { id: 7, url: 'img24.jpeg', topClass: 'top-[0px]',   leftClass: 'left-[1414px]', isSpecialBorder: false },
+    { id: 8, url: 'img9.jpeg',  topClass: 'top-[159px]', leftClass: 'left-[1656px]', isSpecialBorder: false }
   ];
 
   return (
-    /* We build a relative coordinate container frame on desktop (1844px wide x 453px high) */
-    <div className="w-full overflow-x-auto xl:overflow-visible flex justify-center pt-8">
+    /* Responsive viewport wrapper preventing x-axis window expansion layout breaking */
+    <div className="w-full flex items-center justify-center overflow-visible py-4 min-h-[250px] sm:min-h-[350px] xl:min-h-[453px]">
       
-      {/* DESKTOP ABSTRACT VIEWPORT SCREEN PATHWAYS */}
+      {/* PIXEL-PERFECT RESPONSTIVE CANVAS SCALE:
+        Scales down smoothly for small viewports, ensuring mobile layout looks identical to desktop.
+      */}
       <div 
-        className="relative shrink-0 hidden xl:block"
+        className="relative shrink-0 origin-center scale-[0.45] sm:scale-[0.6] md:scale-[0.75] lg:scale-[0.85] xl:scale-100 transition-transform duration-300"
         style={{ width: '1844px', height: '453px' }}
       >
         {avatars.map((avatar, index) => (
           <div 
             key={avatar.id}
-            className={`absolute ${avatar.topClass} ${avatar.leftClass} w-[226px] h-[226px] rounded-full overflow-hidden shadow-lg hover:scale-110 hover:z-30 transition-transform duration-300 bg-neutral-100 ${
+            className={`absolute ${avatar.topClass} ${avatar.leftClass} w-[226px] h-[226px] rounded-full overflow-hidden shadow-lg hover:scale-110 hover:z-50 transition-transform duration-300 bg-neutral-100 ${
               avatar.isSpecialBorder 
                 ? 'border-[8px] border-white shadow-xl' 
                 : 'border-4 border-white'
@@ -41,25 +43,6 @@ function AvatarGrid() {
           </div>
         ))}
       </div>
-
-      {/* MOBILE BREAKPOINT LOGIC - Displays a clean fluid row layout so it doesn't break overflow boundaries */}
-      <div className="flex flex-wrap items-center justify-center gap-4 px-4 xl:hidden">
-        {avatars.map((avatar, index) => (
-          <div 
-            key={avatar.id}
-            className={`w-28 h-28 rounded-full overflow-hidden bg-neutral-100 shadow-md ${
-              avatar.isSpecialBorder ? 'border-4 border-white' : 'border-2 border-white'
-            }`}
-          >
-            <img 
-              src={avatar.url} 
-              alt="Team thumbnail mini"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-
     </div>
   );
 }
