@@ -10,7 +10,7 @@ function AvatarGrid() {
     { id: 5, url: 'img23.jpeg', topClass: 'xl:top-[55px]',  leftClass: 'xl:left-[977px]' },
     { id: 6, url: 'img7.jpeg',  topClass: 'xl:top-[139px]', leftClass: 'xl:left-[1144px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
   { id: 7, url: 'img24.jpeg',  topClass: 'xl:top-[0px]', leftClass: 'xl:left-[1414px]', isSpecialBorder: true }, // Ellipse 258 (8px border)
-  { id: 7, url: 'img9.jpeg',  topClass: 'xl:top-[159px]', leftClass: 'xl:left-[1656px]', isSpecialBorder: true },
+  { id: 8, url: 'img9.jpeg',  topClass: 'xl:top-[159px]', leftClass: 'xl:left-[1656px]', isSpecialBorder: true },
   ];
 
   return (
@@ -20,7 +20,7 @@ function AvatarGrid() {
       {/* DESKTOP ABSTRACT VIEWPORT SCREEN PATHWAYS */}
       <div 
         className="relative shrink-0 hidden xl:block"
-        style={{ width: '1844px', height: '453px' }}
+        style={{ width: '1900px', height: '453px' }}
       >
         {avatars.map((avatar, index) => (
           <div 
