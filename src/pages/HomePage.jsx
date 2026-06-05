@@ -29,7 +29,7 @@ function HomePage() {
         
         <main className="flex-1">
           {/* HERO SECTION */}
-          <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+          <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
             <WavyLine vertical className="absolute left-4 top-1/4 hidden lg:block opacity-60" />
             
             <div className="container-elementum">
@@ -51,8 +51,7 @@ function HomePage() {
                     and doers were{' '}ch
                     <span 
                       style={{ backgroundColor: '#FFC2EA', borderRadius: '100px' }} 
-                      className="right-1 inline-block  pt-4 pb-4 pl-2 pr-2 leading-none transform -rotate-1"
-                    >anging
+                      className="right-1 inline-block  pt-4 pb-4 pl-2 pr-2 leading-none transform -rotate-1">anging
                     </span>{' '}
                     the{' '}
                     <span 
