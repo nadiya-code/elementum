@@ -105,18 +105,16 @@ function HomePage() {
             </div>
           </section>
           
-          {/* FEATURES SECTION BLOCK A */}
-          {/* FEATURES SECTION BLOCK A */}
+{/* FEATURES SECTION BLOCK A */}
 <section id="studio" className="section-padding overflow-hidden">
   <div className="container-elementum">
     <motion.div 
       initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-      className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+      className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center isolate"
     >
-      {/* TEXT — stacks below image on mobile */}
-      <div className="order-2 lg:order-1">
-        {/* ✅ Removed fixed w-[724px] h-[141px] top-[129px] — breaks mobile */}
-        <h2 className="mb-6 font-bold text-2xl sm:text-3xl md:text-5xl leading-tight z-10">
+      {/* TEXT */}
+      <div className="order-2 lg:order-1 relative z-10 bg-background">
+        <h2 className="mb-6 font-bold text-2xl sm:text-3xl md:text-5xl leading-tight">
           <span className="relative inline-block pb-3">
             Tomorrow
             <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
@@ -132,12 +130,39 @@ function HomePage() {
         </a>
       </div>
 
-      {/* IMAGE — shows first on mobile */}
-      <div className="order-1 lg:order-2 relative mx-auto w-full max-w-[280px] sm:max-w-sm lg:max-w-none">
-        <CircleGlow size={400} className="-top-10 -left-10" />
-        <TriangleAccent size={200} className="absolute -bottom-16 -right-10 z-0 rotate-12" />
-        
-        <div className="relative z-0 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
+      {/* IMAGE */}
+      <div className="order-1 lg:order-2 relative z-0 mx-auto w-full max-w-[280px] sm:max-w-sm lg:max-w-none">
+        <CircleGlow size={400} className="-top-10 -left-10 hidden sm:block" />
+
+        {/* Square — top right, large, rotated 32deg, matching Figma */}
+        <div 
+          className="absolute z-0"
+          style={{
+            width: '274px',
+            height: '267px',
+            backgroundColor: '#FF7171',
+            borderRadius: '6px',
+            transform: 'rotate(32.03deg)',
+            top: '-60px',
+            right: '-60px',
+          }}
+        />
+
+        {/* Smaller square for mobile */}
+        <div 
+          className="absolute z-0 sm:hidden"
+          style={{
+            width: '120px',
+            height: '120px',
+            backgroundColor: '#FF7171',
+            borderRadius: '4px',
+            transform: 'rotate(32deg)',
+            top: '-30px',
+            right: '-20px',
+          }}
+        />
+
+        <div className="relative z-10 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
           <img 
             src="img18.jpeg" 
             alt="Two men in business meeting"
@@ -150,43 +175,73 @@ function HomePage() {
   </div>
 </section>
           {/* FEATURES SECTION BLOCK B */}
-          <section className="section-padding overflow-hidden">
-            <div className="container-elementum">
-              <motion.div 
-                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-                className="grid lg:grid-cols-2 gap-16 items-center"
-              >
-                <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-                  <TriangleAccent size={120} className="absolute -top-10 -left-10 z-0 -rotate-12" />
-                  <TriangleAccent size={150} className="absolute -bottom-12 -right-6 z-0 rotate-45" />
-                  
-                  <div className="relative z-10 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                      alt="Two colleagues at desk"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
+<section className="section-padding overflow-hidden">
+  <div className="container-elementum">
+    <motion.div 
+      initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+      className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center isolate"
+    >
+      {/* IMAGE */}
+      <div className="relative mx-auto w-full max-w-[280px] sm:max-w-sm lg:max-w-none">
 
-                <div>
-                  <h2 className="mb-6 font-bold text-3xl md:text-5xl leading-tight relative">
-                    See how we can help you{' '}
-                    <span className="relative inline-block pb-3">
-                      Progress
-                      <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
-                    </span>
-                  </h2>
-                  <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                    From brand strategy to digital experiences, we bring together diverse expertise to solve complex challenges and create lasting impact through fearless insights.
-                  </p>
-                  <a href="#services" className="inline-flex items-center text-lg font-bold hover:text-[hsl(var(--elementum-purple))] transition-colors group">
-                    Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                  </a>
-                </div>
-              </motion.div>
-            </div>
-          </section>
+        {/* Small triangle — top left */}
+        <div
+          className="absolute z-0"
+          style={{
+            width: 0,
+            height: 0,
+            borderLeft: '50px solid transparent',
+            borderRight: '50px solid transparent',
+            borderBottom: '86px solid #FF7171',
+            top: '-30px',
+            left: '-20px',
+          }}
+        />
+
+        {/* Large triangle — bottom right */}
+        <div
+          className="absolute z-0"
+          style={{
+            width: 0,
+            height: 0,
+            borderLeft: '80px solid transparent',
+            borderRight: '80px solid transparent',
+            borderBottom: '140px solid #FF7171',
+            bottom: '-40px',
+            right: '-10px',
+          }}
+        />
+
+        <div className="relative z-10 aspect-square rounded-full overflow-hidden border-4 border-white shadow-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+            alt="Two colleagues at desk"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* TEXT */}
+      <div className="relative z-10 bg-background">
+        <h2 className="mb-6 font-bold text-2xl sm:text-3xl md:text-5xl leading-tight relative">
+          See how we can help you{' '}
+          <span className="relative inline-block pb-3">
+            Progress
+            <WavyLine className="absolute bottom-[-15px] left-0 w-full h-[32px] pointer-events-none z-0" />
+          </span>
+        </h2>
+        <p className="text-base sm:text-xl text-muted-foreground mb-8 leading-relaxed">
+          From brand strategy to digital experiences, we bring together diverse expertise to solve 
+          complex challenges and create lasting impact through fearless insights.
+        </p>
+        <a href="#services" className="inline-flex items-center text-base sm:text-lg font-bold hover:text-[hsl(var(--elementum-purple))] transition-colors group">
+          Read more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+        </a>
+      </div>
+
+    </motion.div>
+  </div>
+</section>
 
           {/* SERVICES SECTION */}
           <section id="services" className="section-padding relative">
