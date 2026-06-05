@@ -200,7 +200,7 @@ function HomePage() {
 
         {/* Large triangle — bottom right */}
         <div
-          className="absolute z-0"
+          className="absolute z-1"
           style={{
             width: 0,
             height: 0,
